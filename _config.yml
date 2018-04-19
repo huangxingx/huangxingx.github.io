@@ -79,5 +79,8 @@ theme: landscape
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
   type: git
-  url: git@github.com:huangxingx/huangxingx.github.io.git
-  message: update at {{ now('YYYY-MM-DD HH:mm:ss') }
+  repository: git@github.com:huangxingx/huangxingx.github.io.git
+  branch: master
+  message: message
+
+  extend_dirs:
