@@ -4,7 +4,7 @@
 
 # Site
 title: huangxingx
-subtitle: python web developer
+subtitle: Follow Your Heart.
 description:
 keywords:
 author: huangxingx
@@ -13,7 +13,7 @@ timezone:
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
-url: http://yoursite.com
+url: https://huangxingx.github.io
 root: /
 permalink: :year/:month/:day/:title/
 permalink_defaults:
@@ -54,7 +54,7 @@ index_generator:
   order_by: -date
 
 # Category & Tag
-default_category: uncategorized
+default_category: categorized
 category_map:
 tag_map:
 
@@ -73,7 +73,7 @@ pagination_dir: page
 # Extensions
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
-theme: landscape
+theme: 3-hexo
 
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
