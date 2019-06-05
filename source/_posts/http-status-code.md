@@ -6,7 +6,8 @@ tags:
 - http
 - web
 categories:
-- http web
+- http
+
 
 auto_excerpt:
   enable: true

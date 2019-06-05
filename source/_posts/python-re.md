@@ -5,7 +5,7 @@ tags:
 - re
 - python
 categories:
-- python re
+- python
 
 auto_excerpt:
   enable: true

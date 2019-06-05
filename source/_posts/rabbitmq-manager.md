@@ -2,11 +2,11 @@
 title: Rabbitmq的web管理界面
 date: 2017-11-13 17:21:05
 tags:
-- Rabbitmq
+- rabbitmq
 - amqp
 - queue
 categories:
-- Rabbitmq web
+- rabbitmq
 
 auto_excerpt:
   enable: true
