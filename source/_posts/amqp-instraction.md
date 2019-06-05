@@ -2,10 +2,10 @@
 title: AMQP介绍
 date: 2018-07-16 17:21:05
 tags:
-- http
-- web
+- rabbitmq
+
 categories:
-- http web
+- rabbitmq
 
 auto_excerpt:
   enable: true
