@@ -61,3 +61,9 @@ r := router.Group("/ServiceName")
 
 ```
 启动 ```micro api --namespace=com.example.api``` 这里必须要加 api 不然转发不了。
+
+## 3. 使用 micro new 生成模板
+
+使用 micro new 生成模板， RegisterSubscriber 的 topic 名称和 service name 一样，导致大概50%的概率出现请求失败问题。</br>
+
+解决方法: 注释 RegisterSubscriber 部分代码，或者换一个 topic 名称。
