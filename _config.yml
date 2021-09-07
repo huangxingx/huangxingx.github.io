@@ -20,7 +20,7 @@ permalink_defaults:
 
 # Directory
 source_dir: source
-public_dir: public
+public_dir: docs
 tag_dir: tags
 archive_dir: archives
 category_dir: categories
@@ -80,7 +80,7 @@ theme: 3-hexo
 deploy:
   type: git
   repository: git@github.com:huangxingx/huangxingx.github.io.git
-  branch: master
+  branch: gp-page
   message: message
 
   extend_dirs:
