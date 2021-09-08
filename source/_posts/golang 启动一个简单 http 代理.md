@@ -1,17 +1,18 @@
 ---
-title: go-请求转发
+title: golang 启动一个简单 http 代理
 date: 2020-05-08 11:30:57
 tags: 
-- go
+- golang
+- http
+
 categories:
-- go
+- golang
 ---
 
-# golang 转发 http 请求
+## golang 转发 http 请求
 
 
 ```golang
-
 package main
 
 import (
@@ -41,6 +42,5 @@ func main() {
 	http.HandleFunc("/", proxyHandler)
 	log.Fatal(http.ListenAndServe(":2002", nil))
 }
-
 
 ```
