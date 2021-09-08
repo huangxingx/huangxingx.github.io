@@ -1,15 +1,16 @@
 ---
-title: markdown
+title: markdown 语法简介
 date: 2019-06-05 11:13:18
 tags: 
-- docs
 - markdown
+- api
 
 categories:
-- docs
+- markdown
+- api
 ---
 
-```
+```markdown
 #一、标题写法：
 第一种方法：
 1、在文本下面加上 等于号 = ，那么上方的文本就变成了大标题。等于号的个数无限制，但一定要大于0个哦。。

@@ -1,10 +1,12 @@
 ---
-title: go-生成随机字符串
+title: golang 生成随机字符串
 date: 2019-06-13 15:41:22
 tags: 
-- go
+- golang
+
 categories:
-- go
+- golang
+
 ---
 
 ### 随机字符串
@@ -91,3 +93,34 @@ func GetFixedLenByte(b []byte, length int, char byte) (tb []byte) {
 	return
 }
 ```
+
+### 生成随机验证码
+
+```golang
+package main
+ 
+import (
+	"fmt"
+	"math/rand"
+	"strings"
+	"time"
+)
+ 
+func GenValidateCode(width int) string {
+	numeric := [10]byte{0,1,2,3,4,5,6,7,8,9}
+	r := len(numeric)
+	rand.Seed(time.Now().UnixNano())
+ 
+	var sb strings.Builder
+	for i := 0; i < width; i++ {
+		fmt.Fprintf(&sb, "%d", numeric[ rand.Intn(r) ])
+	}
+	return sb.String()
+}
+ 
+func main() {
+	fmt.Println( GenValidateCode(6) )
+}
+
+```
+
