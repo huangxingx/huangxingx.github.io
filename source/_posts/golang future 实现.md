@@ -4,6 +4,7 @@ date: 2019-06-06 15:16:40
 tags: 
 - golang
 - future
+
 categories:
 - golang
 ---
@@ -18,6 +19,7 @@ import (
     "time"
 )
 
+// Future 
 type Future struct {
     isfinished bool
     result     interface{}
@@ -25,6 +27,7 @@ type Future struct {
     l          sync.Mutex
 }
 
+// GetResult get return value
 func (f *Future) GetResult() interface{} {
     f.l.Lock()
     defer f.l.Unlock()
@@ -44,6 +47,7 @@ func (f *Future) GetResult() interface{} {
     }
 }
 
+// SetResult set return value
 func (f *Future) SetResult(result interface{}) {
     if f.isfinished == true {
         return
@@ -52,6 +56,7 @@ func (f *Future) SetResult(result interface{}) {
     close(f.resultchan)
 }
 
+// NewFuture init Future
 func NewFuture() *Future {
     return &Future{
         isfinished: false,
