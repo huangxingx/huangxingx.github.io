@@ -7,6 +7,7 @@ tags:
 - web
 categories:
 - python
+
 auto_excerpt:
   enable: true
   length: 150
