@@ -5,3 +5,4 @@ public/*
 docs/*
 .deploy_git/*
 
+.DS_Store
