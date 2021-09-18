@@ -1,0 +1,33 @@
+@startuml ants
+class Pool {
+    + NewPool()
+    + Submit()
+    + Free()
+    + Cap()
+    + Release()
+    + Reboot()
+}
+goWorker --> Pool
+class goWorker {
+    Pool pool
+    task
+    -run()
+}
+
+interface workerArray{
+    -len() int
+	-isEmpty() bool
+	-insert(worker *goWorker) error
+	-detach() *goWorker
+	-retrieveExpiry(duration time.Duration) []*goWorker
+	-reset()
+}
+workerArray <|-- loopQueue
+workerArray <|-- workerStack
+
+class loopQueue{
+
+}
+class workerStack{}
+
+@enduml
