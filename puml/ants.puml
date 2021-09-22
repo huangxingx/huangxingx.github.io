@@ -1,5 +1,7 @@
 @startuml ants
 class Pool {
+    workerArray workers
+    state
     + NewPool()
     + Submit()
     + Free()
@@ -7,7 +9,7 @@ class Pool {
     + Release()
     + Reboot()
 }
-goWorker --> Pool
+
 class goWorker {
     Pool pool
     task
@@ -22,12 +24,21 @@ interface workerArray{
 	-retrieveExpiry(duration time.Duration) []*goWorker
 	-reset()
 }
+
+class loopQueue{
+    goWorker[] goWorker
+}
+class workerStack{
+    goWorker[] goWorker
+}
+
+Pool <-- goWorker
+Pool -> workerArray
+
 workerArray <|-- loopQueue
 workerArray <|-- workerStack
 
-class loopQueue{
-
-}
-class workerStack{}
+loopQueue o-- goWorker
+workerStack o-- goWorker
 
 @enduml
