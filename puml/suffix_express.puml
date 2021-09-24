@@ -1,0 +1,39 @@
+@startuml
+'https://plantuml.com/activity-diagram-beta
+
+start
+:表达式列表;
+while (列表不为空)
+    switch (item)
+    case (item == data)
+        :queue.append(item);
+    case (item == "(" 左括号)
+            :stack.push(item);
+    case (item == ")" 右括号)
+        while (stack.getTop() != "(")
+            :queue.append(stack.pop());
+        endwhile
+        :stack.pop()
+        去除左括号;
+    case ()
+        while (true)
+            :top = stack.getTop();
+            if (top的优先级 > item) then (Yes)
+                :stack.push(item);
+                break
+            else (No)
+                :queue.append(stack.pop());
+            endif
+        endwhile
+    endswitch
+endwhile (empty)
+
+while (stack is not empty)
+    :queue.append(stack.pop);
+endwhile (empty)
+
+:queue 后缀表达式;
+
+stop
+
+@enduml
