@@ -6,8 +6,7 @@ tags:
 - api
 
 categories:
-- markdown
-- api
+- 其他
 ---
 
 ```markdown

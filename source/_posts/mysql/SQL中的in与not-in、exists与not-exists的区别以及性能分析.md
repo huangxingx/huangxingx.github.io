@@ -5,7 +5,7 @@ tags:
 - sql
 - 性能
 categories:
-- sql
+- mysql
 auto_excerpt:
   enable: true
   length: 150

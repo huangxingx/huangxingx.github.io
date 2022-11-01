@@ -6,7 +6,6 @@ tags:
 - gorm
 categories:
 - golang
-- gorm
 ---
 
 ### Json 类的实现

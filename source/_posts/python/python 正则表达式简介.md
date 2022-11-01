@@ -7,7 +7,6 @@ tags:
 
 categories:
 - python
-- regex
 
 auto_excerpt:
   enable: true

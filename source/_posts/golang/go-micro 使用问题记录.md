@@ -9,7 +9,6 @@ tags:
 
 categories:
 - golang
-- go-micro
 
 auto_excerpt:
   enable: true

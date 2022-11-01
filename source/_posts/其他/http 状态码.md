@@ -6,8 +6,7 @@ tags:
 - http
 - web
 categories:
-- web
-- http
+- 其他
 
 
 auto_excerpt:

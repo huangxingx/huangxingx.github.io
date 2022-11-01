@@ -6,7 +6,7 @@ tags:
 - springboot
 - 事务
 categories:
-- springboot
+- java
 
 auto_excerpt:
   enable: true
