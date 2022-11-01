@@ -8,7 +8,6 @@ tags:
 - helloworld
 categories:
 - golang
-- docker
 
 auto_excerpt:
   enable: true

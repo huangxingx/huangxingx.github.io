@@ -7,8 +7,7 @@ tags:
 - plugins
 
 categories:
-- jetbrains
-- plugins
+- 其他
 
 auto_excerpt:
   enable: true

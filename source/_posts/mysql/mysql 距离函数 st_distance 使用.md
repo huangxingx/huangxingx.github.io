@@ -7,7 +7,6 @@ tags:
 
 categories:
 - mysql
-- function
 
 ---
 
