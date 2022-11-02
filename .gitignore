@@ -3,6 +3,6 @@
 node_modules/*
 public/*
 docs/*
-.deploy_git/*
+.deploy_git
 
 .DS_Store
