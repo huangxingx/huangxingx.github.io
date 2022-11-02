@@ -1,0 +1,1592 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>gin 验证器 | huangxingx</title>
+  <meta name="keywords" content=" golang , gin ">
+  <meta name="description" content="gin 验证器 | huangxingx">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="description" content="git config官方文档地址：https:&#x2F;&#x2F;git-scm.com&#x2F;book&#x2F;zh&#x2F;v2&#x2F;%E8%B5%B7%E6%AD%A5-%E5%88%9D%E6%AC%A1%E8%BF%90%E8%A1%8C-Git-%E5%89%8D%E7%9A%84%E9%85%8D%E7%BD%AE自定义 Git - 配置 Git: https:&#x2F;&#x2F;git-scm.com&#x2F;book&#x2F;zh&#x2F;v2&#x2F;%E8%87%">
+<meta property="og:type" content="article">
+<meta property="og:title" content="git config">
+<meta property="og:url" content="https://huangxingx.github.io/2022/11/01/git/git-config/index.html">
+<meta property="og:site_name" content="huangxingx">
+<meta property="og:description" content="git config官方文档地址：https:&#x2F;&#x2F;git-scm.com&#x2F;book&#x2F;zh&#x2F;v2&#x2F;%E8%B5%B7%E6%AD%A5-%E5%88%9D%E6%AC%A1%E8%BF%90%E8%A1%8C-Git-%E5%89%8D%E7%9A%84%E9%85%8D%E7%BD%AE自定义 Git - 配置 Git: https:&#x2F;&#x2F;git-scm.com&#x2F;book&#x2F;zh&#x2F;v2&#x2F;%E8%87%">
+<meta property="og:locale">
+<meta property="article:published_time" content="2022-11-01T07:43:04.000Z">
+<meta property="article:modified_time" content="2022-11-01T02:58:42.349Z">
+<meta property="article:author" content="huangxingx">
+<meta property="article:tag" content="git">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="icon" href="/img/avatar.jpg">
+
+<link href="/css/style.css?v=1.1.0" rel="stylesheet">
+
+<link href="/css/hl_theme/atom-light.css?v=1.1.0" rel="stylesheet">
+
+<link href="//cdn.jsdelivr.net/npm/animate.css@4.1.0/animate.min.css" rel="stylesheet">
+
+<script src="//cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
+<script src="/js/titleTip.js?v=1.1.0" ></script>
+
+<script src="//cdn.jsdelivr.net/npm/highlightjs@9.16.2/highlight.pack.min.js"></script>
+<script>
+    hljs.initHighlightingOnLoad();
+</script>
+
+<script src="//cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.js"></script>
+
+
+
+<script src="//cdn.jsdelivr.net/npm/jquery.cookie@1.4.1/jquery.cookie.min.js" ></script>
+
+<script src="/js/iconfont.js?v=1.1.0" ></script>
+
+<meta name="generator" content="Hexo 5.4.0"></head>
+<div style="display: none">
+  <input class="theme_disqus_on" value="false">
+  <input class="theme_preload_comment" value="">
+  <input class="theme_blog_path" value="">
+  <input id="theme_shortcut" value="true" />
+  <input id="theme_highlight_on" value="true" />
+  <input id="theme_code_copy" value="true" />
+</div>
+
+
+
+<body>
+<aside class="nav">
+    <div class="nav-left">
+        <a href="/"
+   class="avatar_target">
+    <img class="avatar"
+         src="/img/avatar.jpg"/>
+</a>
+<div class="author">
+    <span>huangxingx</span>
+</div>
+
+<div class="icon">
+    
+        
+            <a title="github"
+               href="https://github.com/huangxingx"
+               target="_blank">
+                
+                    <svg class="iconfont-svg" aria-hidden="true">
+                        <use xlink:href="#icon-github"></use>
+                    </svg>
+                
+            </a>
+        
+    
+        
+            <a title="email"
+               href="mailto:296245956@qq.com"
+               target="_blank">
+                
+                    <svg class="iconfont-svg" aria-hidden="true">
+                        <use xlink:href="#icon-email"></use>
+                    </svg>
+                
+            </a>
+        
+    
+</div>
+
+
+
+    <a class="more-menus">更多菜单</a>
+
+
+<ul>
+    <li>
+        <div class="all active" data-rel="All">All
+            
+        </div>
+    </li>
+    
+        
+            <li>
+                <div data-rel="其他">其他
+                    
+                </div>
+            </li>
+        
+    
+        
+            <li>
+                <div data-rel="算法">算法
+                    
+                </div>
+            </li>
+        
+    
+        
+            <li>
+                <div data-rel="docker">docker
+                    
+                </div>
+            </li>
+        
+    
+        
+            <li>
+                <div data-rel="git">git
+                    
+                </div>
+            </li>
+        
+    
+        
+            <li>
+                <div data-rel="golang">golang
+                    
+                </div>
+            </li>
+        
+    
+        
+            <li>
+                <div data-rel="java">java
+                    
+                </div>
+            </li>
+        
+    
+        
+            <li>
+                <div data-rel="linux">linux
+                    
+                </div>
+            </li>
+        
+    
+        
+            <li>
+                <div data-rel="mac">mac
+                    
+                </div>
+            </li>
+        
+    
+        
+            <li>
+                <div data-rel="mysql">mysql
+                    
+                </div>
+            </li>
+        
+    
+        
+            <li>
+                <div data-rel="python">python
+                    
+                </div>
+            </li>
+        
+    
+        
+            <li>
+                <div data-rel="redis">redis
+                    
+                </div>
+            </li>
+        
+    
+</ul>
+<div class="left-bottom">
+    <div class="menus">
+        
+            
+            
+            
+                <a class="dynamic-menu "
+                   target="_blank"
+                        
+                   href="https://github.com/huangxingx">github</a>
+        
+    </div>
+    <div>
+        
+            <a class="about  hasFriend  site_url"
+               
+               href="/about">About</a>
+        
+        <a style="width: 50%"
+                
+                                           class="friends">Friends</a>
+        
+    </div>
+</div>
+<input type="hidden" id="yelog_site_posts_number" value="34">
+
+<div style="display: none">
+    <span id="busuanzi_value_site_uv"></span>
+    <span id="busuanzi_value_site_pv"></span>
+</div>
+
+    </div>
+    <div class="nav-right">
+        <div class="friends-area">
+    <div class="friends-title">
+        Links
+        <i class="iconfont icon-left"></i>
+    </div>
+    <div class="friends-content">
+        <ul>
+            
+        </ul>
+    </div>
+</div>
+        <div class="title-list">
+    <div class="right-top">
+        <div id="default-panel">
+            <i class="iconfont icon-search" data-title="搜索 快捷键 i"></i>
+            <div class="right-title">All</div>
+            <i class="iconfont icon-file-tree" data-title="切换到大纲视图 快捷键 w"></i>
+        </div>
+        <div id="search-panel">
+            <i class="iconfont icon-left" data-title="返回"></i>
+            <input id="local-search-input" autocomplete="off"/>
+            <label class="border-line" for="input"></label>
+            <i class="iconfont icon-case-sensitive" data-title="大小写敏感"></i>
+            <i class="iconfont icon-tag" data-title="标签"></i>
+        </div>
+        <div id="outline-panel" style="display: none">
+            <div class="right-title">大纲</div>
+            <i class="iconfont icon-list" data-title="切换到文章列表"></i>
+        </div>
+    </div>
+
+    <div class="tags-list">
+    <input id="tag-search" />
+    <div class="tag-wrapper">
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>慢日志</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>事务</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>算法</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>微服务</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>性能</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>注意事项</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>ants</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>api</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>concurrent</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>docker</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>docker-compose</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>function</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>future</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>gin</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>git</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>go-micro</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>golang</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>gorm</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>goroutine</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>helloworld</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>http</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>java</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>jetbrains</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>linux</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>mac</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>mapstruct</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>markdown</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>maven</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>mysql</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>plugins</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>python</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>regex</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>site</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>springboot</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>sql</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>ssh</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>sync.Pool</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>timewheels</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>web</a>
+            </li>
+        
+    </div>
+
+</div>
+
+    
+    <nav id="title-list-nav">
+        
+        
+        <a  class="All git "
+           href="/2022/11/01/git/git-config/"
+           data-tag="git"
+           data-author="" >
+            <span class="post-title" title="git config">git config</span>
+            <span class="post-date" title="2022-11-01 15:43:04">2022/11/01</span>
+        </a>
+        
+        
+        <a  class="All docker "
+           href="/2022/11/01/docker/docker-%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/"
+           data-tag="docker"
+           data-author="" >
+            <span class="post-title" title="docker 常用命令">docker 常用命令</span>
+            <span class="post-date" title="2022-11-01 15:43:04">2022/11/01</span>
+        </a>
+        
+        
+        <a  class="All git "
+           href="/2022/11/01/git/git-%E7%BB%9F%E8%AE%A1%E5%91%BD%E4%BB%A4/"
+           data-tag="git"
+           data-author="" >
+            <span class="post-title" title="git 统计命令">git 统计命令</span>
+            <span class="post-date" title="2022-11-01 15:43:04">2022/11/01</span>
+        </a>
+        
+        
+        <a  class="All golang "
+           href="/2022/11/01/golang/gin%20%E9%AA%8C%E8%AF%81%E5%99%A8/"
+           data-tag="golang,gin"
+           data-author="" >
+            <span class="post-title" title="gin 验证器">gin 验证器</span>
+            <span class="post-date" title="2022-11-01 15:43:04">2022/11/01</span>
+        </a>
+        
+        
+        <a  class="All golang "
+           href="/2022/11/01/golang/golang%20%E5%87%BD%E6%95%B0%E8%B0%83%E7%94%A8%E9%93%BE/"
+           data-tag="golang"
+           data-author="" >
+            <span class="post-title" title="golang 函数调用链">golang 函数调用链</span>
+            <span class="post-date" title="2022-11-01 15:43:04">2022/11/01</span>
+        </a>
+        
+        
+        <a  class="All golang "
+           href="/2022/11/01/golang/golang%20%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%E5%B8%B8%E7%94%A8/"
+           data-tag="golang,regex"
+           data-author="" >
+            <span class="post-title" title="golang 正则表达式常用">golang 正则表达式常用</span>
+            <span class="post-date" title="2022-11-01 15:43:04">2022/11/01</span>
+        </a>
+        
+        
+        <a  class="All mac "
+           href="/2022/11/01/mac/mac-item2-%E7%BB%88%E7%AB%AF/"
+           data-tag="mac"
+           data-author="" >
+            <span class="post-title" title="mac zsh 终端">mac zsh 终端</span>
+            <span class="post-date" title="2022-11-01 15:43:04">2022/11/01</span>
+        </a>
+        
+        
+        <a  class="All linux "
+           href="/2022/11/01/linux/ssh/"
+           data-tag="ssh,linux"
+           data-author="" >
+            <span class="post-title" title="ssh">ssh</span>
+            <span class="post-date" title="2022-11-01 15:43:04">2022/11/01</span>
+        </a>
+        
+        
+        <a  class="All java "
+           href="/2021/11/02/java/maven-template/"
+           data-tag="java,maven"
+           data-author="" >
+            <span class="post-title" title="maven template">maven template</span>
+            <span class="post-date" title="2021-11-02 00:00:00">2021/11/02</span>
+        </a>
+        
+        
+        <a  class="All java "
+           href="/2021/10/25/java/java-mapstruct-%E8%AF%A6%E8%A7%A3/"
+           data-tag="java,mapstruct,plugins"
+           data-author="" >
+            <span class="post-title" title="java mapstruct 详解">java mapstruct 详解</span>
+            <span class="post-date" title="2021-10-25 09:58:50">2021/10/25</span>
+        </a>
+        
+        
+        <a  class="All golang "
+           href="/2021/09/30/golang/golang-%E5%B9%B6%E5%8F%91%E8%B5%8B%E5%80%BC%E5%AE%89%E5%85%A8%E6%80%A7/"
+           data-tag="golang,concurrent"
+           data-author="" >
+            <span class="post-title" title="golang 并发赋值安全性">golang 并发赋值安全性</span>
+            <span class="post-date" title="2021-09-30 19:10:48">2021/09/30</span>
+        </a>
+        
+        
+        <a  class="All golang "
+           href="/2021/09/30/golang/sync-Pool-%E5%AF%B9%E8%B1%A1%E6%B1%A0%E4%BD%BF%E7%94%A8%E9%97%AE%E9%A2%98%E8%AE%B0%E5%BD%95/"
+           data-tag="golang,concurrent,sync.Pool"
+           data-author="" >
+            <span class="post-title" title="sync.Pool 对象池使用问题记录">sync.Pool 对象池使用问题记录</span>
+            <span class="post-date" title="2021-09-30 11:07:11">2021/09/30</span>
+        </a>
+        
+        
+        <a  class="All 算法 "
+           href="/2021/09/30/%E7%AE%97%E6%B3%95/%E6%97%B6%E9%97%B4%E8%BD%AE/"
+           data-tag="算法,timewheels"
+           data-author="" >
+            <span class="post-title" title="时间轮">时间轮</span>
+            <span class="post-date" title="2021-09-30 09:45:10">2021/09/30</span>
+        </a>
+        
+        
+        <a  class="All golang "
+           href="/2021/09/24/golang/golang-%E5%AE%9E%E7%8E%B0%E8%AE%A1%E7%AE%97%E5%99%A8/"
+           data-tag="golang,算法"
+           data-author="" >
+            <span class="post-title" title="golang 实现计算器">golang 实现计算器</span>
+            <span class="post-date" title="2021-09-24 16:58:16">2021/09/24</span>
+        </a>
+        
+        
+        <a  class="All 其他 "
+           href="/2021/09/23/%E5%85%B6%E4%BB%96/%E7%8A%B6%E6%80%81%E6%9C%BA/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="状态机">状态机</span>
+            <span class="post-date" title="2021-09-23 17:49:33">2021/09/23</span>
+        </a>
+        
+        
+        <a  class="All golang "
+           href="/2021/09/18/golang/golang-ants-%E5%8D%8F%E7%A8%8B%E6%B1%A0/"
+           data-tag="golang,ants,goroutine"
+           data-author="" >
+            <span class="post-title" title="golang ants 协程池">golang ants 协程池</span>
+            <span class="post-date" title="2021-09-18 16:07:50">2021/09/18</span>
+        </a>
+        
+        
+        <a  class="All 其他 "
+           href="/2021/09/18/%E5%85%B6%E4%BB%96/jetbrains-%E6%8F%92%E4%BB%B6%E6%8E%A8%E8%8D%90/"
+           data-tag="plugins,jetbrains"
+           data-author="" >
+            <span class="post-title" title="jetbrains 插件推荐">jetbrains 插件推荐</span>
+            <span class="post-date" title="2021-09-18 14:07:20">2021/09/18</span>
+        </a>
+        
+        
+        <a  class="All mysql "
+           href="/2021/09/17/mysql/mysql-%E6%85%A2%E6%97%A5%E5%BF%97%E6%9F%A5%E8%AF%A2%E5%88%86%E6%9E%90/"
+           data-tag="mysql,慢日志"
+           data-author="" >
+            <span class="post-title" title="mysql 慢日志查询分析">mysql 慢日志查询分析</span>
+            <span class="post-date" title="2021-09-17 09:58:36">2021/09/17</span>
+        </a>
+        
+        
+        <a  class="All mysql "
+           href="/2021/09/14/mysql/SQL%E4%B8%AD%E7%9A%84in%E4%B8%8Enot-in%E3%80%81exists%E4%B8%8Enot-exists%E7%9A%84%E5%8C%BA%E5%88%AB%E4%BB%A5%E5%8F%8A%E6%80%A7%E8%83%BD%E5%88%86%E6%9E%90/"
+           data-tag="sql,性能"
+           data-author="" >
+            <span class="post-title" title="SQL中的in与not in、exists与not exists的区别以及性能分析">SQL中的in与not in、exists与not exists的区别以及性能分析</span>
+            <span class="post-date" title="2021-09-14 22:55:15">2021/09/14</span>
+        </a>
+        
+        
+        <a  class="All java "
+           href="/2021/09/13/java/springboot-%E4%BA%8B%E5%8A%A1/"
+           data-tag="java,springboot,事务"
+           data-author="" >
+            <span class="post-title" title="springboot 事务">springboot 事务</span>
+            <span class="post-date" title="2021-09-13 20:18:56">2021/09/13</span>
+        </a>
+        
+        
+        <a  class="All python "
+           href="/2021/09/09/python/uvicorn-%E5%88%9D%E8%AF%86/"
+           data-tag="python,web"
+           data-author="" >
+            <span class="post-title" title="uvicorn 初识">uvicorn 初识</span>
+            <span class="post-date" title="2021-09-09 17:10:23">2021/09/09</span>
+        </a>
+        
+        
+        <a  class="All golang "
+           href="/2021/09/08/golang/golang-helloworld-docker-%E5%90%AF%E5%8A%A8/"
+           data-tag="docker,golang,docker-compose,helloworld"
+           data-author="" >
+            <span class="post-title" title="golang helloworld docker 启动">golang helloworld docker 启动</span>
+            <span class="post-date" title="2021-09-08 17:15:43">2021/09/08</span>
+        </a>
+        
+        
+        <a  class="All git "
+           href="/2021/09/08/git/git-%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/"
+           data-tag="git"
+           data-author="" >
+            <span class="post-title" title="git 常用命令">git 常用命令</span>
+            <span class="post-date" title="2021-09-08 15:43:04">2021/09/08</span>
+        </a>
+        
+        
+        <a  class="All redis "
+           href="/2021/09/08/redis/redis-%E8%AF%A6%E8%A7%A3/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="redis 详解">redis 详解</span>
+            <span class="post-date" title="2021-09-08 15:22:26">2021/09/08</span>
+        </a>
+        
+        
+        <a  class="All golang "
+           href="/2020/05/08/golang/golang%20%E5%90%AF%E5%8A%A8%E4%B8%80%E4%B8%AA%E7%AE%80%E5%8D%95%20http%20%E4%BB%A3%E7%90%86/"
+           data-tag="golang,http"
+           data-author="" >
+            <span class="post-title" title="golang 启动一个简单 http 代理">golang 启动一个简单 http 代理</span>
+            <span class="post-date" title="2020-05-08 11:30:57">2020/05/08</span>
+        </a>
+        
+        
+        <a  class="All golang "
+           href="/2019/11/05/golang/go-micro%20%E4%BD%BF%E7%94%A8%E9%97%AE%E9%A2%98%E8%AE%B0%E5%BD%95/"
+           data-tag="golang,go-micro,微服务,注意事项"
+           data-author="" >
+            <span class="post-title" title="go-micro 使用问题记录">go-micro 使用问题记录</span>
+            <span class="post-date" title="2019-11-05 18:30:57">2019/11/05</span>
+        </a>
+        
+        
+        <a  class="All golang "
+           href="/2019/06/13/golang/golang%20%E7%94%9F%E6%88%90%E9%9A%8F%E6%9C%BA%E5%AD%97%E7%AC%A6%E4%B8%B2/"
+           data-tag="golang"
+           data-author="" >
+            <span class="post-title" title="golang 生成随机字符串">golang 生成随机字符串</span>
+            <span class="post-date" title="2019-06-13 15:41:22">2019/06/13</span>
+        </a>
+        
+        
+        <a  class="All mysql "
+           href="/2019/06/12/mysql/mysql%20%E8%B7%9D%E7%A6%BB%E5%87%BD%E6%95%B0%20st_distance%20%E4%BD%BF%E7%94%A8/"
+           data-tag="mysql,function"
+           data-author="" >
+            <span class="post-title" title="mysql 距离函数 st_distance 使用">mysql 距离函数 st_distance 使用</span>
+            <span class="post-date" title="2019-06-12 15:58:59">2019/06/12</span>
+        </a>
+        
+        
+        <a  class="All golang "
+           href="/2019/06/11/golang/gorm%20%E4%B8%AD%E4%BD%BF%E7%94%A8%20json/"
+           data-tag="golang,gorm"
+           data-author="" >
+            <span class="post-title" title="gorm 中使用 json">gorm 中使用 json</span>
+            <span class="post-date" title="2019-06-11 16:55:56">2019/06/11</span>
+        </a>
+        
+        
+        <a  class="All golang "
+           href="/2019/06/06/golang/golang%20future%20%E5%AE%9E%E7%8E%B0/"
+           data-tag="golang,future"
+           data-author="" >
+            <span class="post-title" title="golang future 实现">golang future 实现</span>
+            <span class="post-date" title="2019-06-06 15:16:40">2019/06/06</span>
+        </a>
+        
+        
+        <a  class="All 其他 "
+           href="/2019/06/05/%E5%85%B6%E4%BB%96/markdown%20%E8%AF%AD%E6%B3%95%E7%AE%80%E4%BB%8B/"
+           data-tag="markdown,api"
+           data-author="" >
+            <span class="post-title" title="markdown 语法简介">markdown 语法简介</span>
+            <span class="post-date" title="2019-06-05 11:13:18">2019/06/05</span>
+        </a>
+        
+        
+        <a  class="All 其他 "
+           href="/2019/06/04/%E5%85%B6%E4%BB%96/%E7%BD%91%E7%AB%99%E6%94%B6%E8%97%8F/"
+           data-tag="api,site"
+           data-author="" >
+            <span class="post-title" title="网站收藏">网站收藏</span>
+            <span class="post-date" title="2019-06-04 16:20:14">2019/06/04</span>
+        </a>
+        
+        
+        <a  class="All 其他 "
+           href="/2018/04/18/%E5%85%B6%E4%BB%96/http%20%E7%8A%B6%E6%80%81%E7%A0%81/"
+           data-tag="http,web"
+           data-author="" >
+            <span class="post-title" title="http 状态码">http 状态码</span>
+            <span class="post-date" title="2018-04-18 17:21:05">2018/04/18</span>
+        </a>
+        
+        
+        <a  class="All python "
+           href="/2017/11/13/python/python%20%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%E7%AE%80%E4%BB%8B/"
+           data-tag="regex,python"
+           data-author="" >
+            <span class="post-title" title="python 正则表达式简介">python 正则表达式简介</span>
+            <span class="post-date" title="2017-11-13 17:21:05">2017/11/13</span>
+        </a>
+        
+        <div id="no-item-tips">
+
+        </div>
+    </nav>
+    <div id="outline-list">
+    </div>
+</div>
+
+    </div>
+    <div class="hide-list">
+        <div class="semicircle" data-title="切换全屏 快捷键 s">
+            <div class="brackets first"><</div>
+            <div class="brackets">&gt;</div>
+        </div>
+    </div>
+</aside>
+<div id="post">
+    <div class="pjax">
+        <article id="post-golang/gin 验证器" class="article article-type-post" itemscope itemprop="blogPost">
+    
+        <h1 class="article-title">gin 验证器</h1>
+    
+    <div class="article-meta">
+        
+        
+        
+        <span class="book">
+            <i class="iconfont icon-category"></i>
+            
+            
+            <a  data-rel="golang">golang</a>
+            
+        </span>
+        
+        
+        <span class="tag">
+            <i class="iconfont icon-tag"></i>
+            
+            <a class="color2">golang</a>
+            
+            <a class="color4">gin</a>
+            
+        </span>
+        
+    </div>
+    <div class="article-meta">
+        
+            Created At : <time class="date" title='Updated At: 2022-11-01 11:05:14'>2022-11-01 15:43</time>
+        
+    </div>
+    <div class="article-meta">
+        
+        
+        
+    </div>
+    
+    <div class="toc-ref">
+    
+        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%89%8D%E8%A8%80"><span class="toc-text">前言</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#validator-%E5%BA%93%E5%AD%97%E6%AE%B5"><span class="toc-text">validator 库字段</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B8%B8%E7%94%A8%E9%AA%8C%E8%AF%81Tag"><span class="toc-text">常用验证Tag</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%87%AA%E5%AE%9A%E4%B9%89%E9%AA%8C%E8%AF%81%E5%99%A81"><span class="toc-text">自定义验证器1</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%AA%8C%E8%AF%81%E5%99%A8%E8%87%AA%E5%AE%9A%E4%B9%89%E9%94%99%E8%AF%AF%E4%BF%A1%E6%81%AF1"><span class="toc-text">验证器自定义错误信息1</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%AA%8C%E8%AF%81%E5%99%A8%E8%87%AA%E5%AE%9A%E4%B9%89%E9%94%99%E8%AF%AF%E4%BF%A1%E6%81%AF2"><span class="toc-text">验证器自定义错误信息2</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8F%82%E8%80%83%E6%96%87%E6%A1%A3"><span class="toc-text">参考文档</span></a></li></ol>
+    
+<style>
+    .left-col .switch-btn,
+    .left-col .switch-area {
+        display: none;
+    }
+    .toc-level-3 i,
+    .toc-level-3 ol {
+        display: none !important;
+    }
+</style>
+</div>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><div class='inner-toc'><ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%89%8D%E8%A8%80"><span class="toc-text">前言</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#validator-%E5%BA%93%E5%AD%97%E6%AE%B5"><span class="toc-text">validator 库字段</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B8%B8%E7%94%A8%E9%AA%8C%E8%AF%81Tag"><span class="toc-text">常用验证Tag</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%87%AA%E5%AE%9A%E4%B9%89%E9%AA%8C%E8%AF%81%E5%99%A81"><span class="toc-text">自定义验证器1</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%AA%8C%E8%AF%81%E5%99%A8%E8%87%AA%E5%AE%9A%E4%B9%89%E9%94%99%E8%AF%AF%E4%BF%A1%E6%81%AF1"><span class="toc-text">验证器自定义错误信息1</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%AA%8C%E8%AF%81%E5%99%A8%E8%87%AA%E5%AE%9A%E4%B9%89%E9%94%99%E8%AF%AF%E4%BF%A1%E6%81%AF2"><span class="toc-text">验证器自定义错误信息2</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8F%82%E8%80%83%E6%96%87%E6%A1%A3"><span class="toc-text">参考文档</span></a></li></ol></div></p>
+<h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>gin的验证器底层使用的是 validator 库实现的，故gin验证器可以使用validator库中的所有功能</p>
+<ul>
+<li>所有标签</li>
+<li>翻译器</li>
+<li>自定义校验器</li>
+<li>其他（不一一列举）</li>
+</ul>
+<p>不同的是gin使用的Tag 为 binding，而validator库使用的是 validate；<br>gin中在初始化validate时通过validate.SetTagName(“binding”)设置标签</p>
+<pre><code class="golang">func (v *defaultValidator) lazyinit() &#123;
+    v.once.Do(func() &#123;
+        v.validate = validator.New()
+        v.validate.SetTagName(&quot;binding&quot;)
+    &#125;)
+&#125;
+</code></pre>
+<p>本文中 gin 版本为 v1.6.3, validator版本为 v10</p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://github.com/gin-gonic/gin">gin</a></li>
+<li><a target="_blank" rel="noopener" href="https://github.com/go-playground/validator">validator</a></li>
+</ul>
+<h3 id="validator-库字段"><a href="#validator-库字段" class="headerlink" title="validator 库字段"></a>validator 库字段</h3><p><strong>gin 使用时把 validate tag 改为 binding 即可</strong></p>
+<table>
+<thead>
+<tr>
+<th>字段</th>
+<th>描述</th>
+<th>例子</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>required</td>
+<td>必填</td>
+<td>Field或Struct validate:”required”</td>
+</tr>
+<tr>
+<td>omitempty</td>
+<td>空时忽略</td>
+<td>Field或Struct validate:”omitempty”</td>
+</tr>
+<tr>
+<td>len</td>
+<td>长度</td>
+<td>Field validate:”len=0”</td>
+</tr>
+<tr>
+<td>eq</td>
+<td>等于</td>
+<td>Field validate:”eq=0”</td>
+</tr>
+<tr>
+<td>gt</td>
+<td>大于</td>
+<td>Field validate:”gt=0”</td>
+</tr>
+<tr>
+<td>gte</td>
+<td>大于等于</td>
+<td>Field validate:”gte=0”</td>
+</tr>
+<tr>
+<td>lt</td>
+<td>小于</td>
+<td>Field validate:”lt=0”</td>
+</tr>
+<tr>
+<td>lte</td>
+<td>小于等于</td>
+<td>Field validate:”lte=0”</td>
+</tr>
+<tr>
+<td>eqfield</td>
+<td>同一结构体字段相等</td>
+<td>Field validate:”eqfield=Field2”</td>
+</tr>
+<tr>
+<td>nefield</td>
+<td>同一结构体字段不相等</td>
+<td>Field validate:”nefield=Field2”</td>
+</tr>
+<tr>
+<td>gtfield</td>
+<td>大于同一结构体字段</td>
+<td>Field validate:”gtfield=Field2”</td>
+</tr>
+<tr>
+<td>gtefield</td>
+<td>大于等于同一结构体字段</td>
+<td>Field validate:”gtefield=Field2”</td>
+</tr>
+<tr>
+<td>ltfield</td>
+<td>小于同一结构体字段</td>
+<td>Field validate:”ltfield=Field2”</td>
+</tr>
+<tr>
+<td>ltefield</td>
+<td>小于等于同一结构体字段</td>
+<td>Field validate:”ltefield=Field2”</td>
+</tr>
+<tr>
+<td>eqcsfield</td>
+<td>跨不同结构体字段相等</td>
+<td>Struct1.Field validate:”eqcsfield=Struct2.Field2”</td>
+</tr>
+<tr>
+<td>necsfield</td>
+<td>跨不同结构体字段不相等</td>
+<td>Struct1.Field validate:”necsfield=Struct2.Field2”</td>
+</tr>
+<tr>
+<td>gtcsfield</td>
+<td>大于跨不同结构体字段</td>
+<td>Struct1.Field validate:”gtcsfield=Struct2.Field2”</td>
+</tr>
+<tr>
+<td>gtecsfield</td>
+<td>大于等于跨不同结构体字段</td>
+<td>Struct1.Field validate:”gtecsfield=Struct2.Field2”</td>
+</tr>
+<tr>
+<td>ltcsfield</td>
+<td>小于跨不同结构体字段</td>
+<td>Struct1.Field validate:”ltcsfield=Struct2.Field2”</td>
+</tr>
+<tr>
+<td>ltecsfield</td>
+<td>小于等于跨不同结构体字段</td>
+<td>Struct1.Field validate:”ltecsfield=Struct2.Field2”</td>
+</tr>
+<tr>
+<td>min</td>
+<td>最大值</td>
+<td>Field validate:”min=1”</td>
+</tr>
+<tr>
+<td>max</td>
+<td>最小值</td>
+<td>Field validate:”max=2”</td>
+</tr>
+<tr>
+<td>structonly</td>
+<td>仅验证结构体，不验证任何结构体字段</td>
+<td>Struct validate:”structonly”</td>
+</tr>
+<tr>
+<td>nostructlevel</td>
+<td>不运行任何结构级别的验证</td>
+<td>Struct validate:”nostructlevel”</td>
+</tr>
+<tr>
+<td>dive</td>
+<td>向下延伸验证，多层向下需要多个dive标记</td>
+<td>[][]string validate:”gt=0,dive,len=1,dive,required”</td>
+</tr>
+<tr>
+<td>dive</td>
+<td>Keys&amp; EndKeys    与dive同时使用，用于对map对象的键的和值的验证，keys为键，endkeys为值</td>
+<td>map[string]string validate :”gt=0,dive,keys,eq=1</td>
+</tr>
+<tr>
+<td>required_with</td>
+<td>其他字段其中一个不为空且当前字段不为空</td>
+<td>Field validate:”required_with=Field1 Field2”</td>
+</tr>
+<tr>
+<td>required_with_all</td>
+<td>其他所有字段不为空且当前字段不为空</td>
+<td>Field validate:”required_with_all=Field1 Field2”</td>
+</tr>
+<tr>
+<td>required_without</td>
+<td>其他字段其中一个为空且当前字段不为空</td>
+<td>Field `validate:”required_without=Field1 Field2”</td>
+</tr>
+<tr>
+<td>required_without_all</td>
+<td>其他所有字段为空且当前字段不为空</td>
+<td>Field validate:”required_without_all=Field1 Field2”</td>
+</tr>
+<tr>
+<td>isdefault</td>
+<td>是默认值</td>
+<td>Field validate:”isdefault=0”</td>
+</tr>
+<tr>
+<td>oneof</td>
+<td>其中之一</td>
+<td>Field validate:”oneof=5 7 9”</td>
+</tr>
+<tr>
+<td>containsfield</td>
+<td>字段包含另一个字段</td>
+<td>Field validate:”containsfield=Field2”</td>
+</tr>
+<tr>
+<td>excludesfield</td>
+<td>字段不包含另一个字段</td>
+<td>Field validate:”excludesfield=Field2”</td>
+</tr>
+<tr>
+<td>unique</td>
+<td>是否唯一，通常用于切片或结构体</td>
+<td>Field validate:”unique”</td>
+</tr>
+<tr>
+<td>alphanum</td>
+<td>字符串值是否只包含</td>
+<td>ASCII 字母数字字符    Field validate:”alphanum”</td>
+</tr>
+<tr>
+<td>alphaunicode</td>
+<td>字符串值是否只包含</td>
+<td>unicode 字符    Field validate:”alphaunicode”</td>
+</tr>
+<tr>
+<td>alphanumunicode</td>
+<td>字符串值是否只包含</td>
+<td>unicode 字母数字字符    Field validate:”alphanumunicode”</td>
+</tr>
+<tr>
+<td>numeric</td>
+<td>字符串值是否包含基本的数值</td>
+<td>Field validate:”numeric”</td>
+</tr>
+<tr>
+<td>hexadecimal</td>
+<td>字符串值是否包含有效的十六进制</td>
+<td>Field validate:”hexadecimal”</td>
+</tr>
+<tr>
+<td>hexcolor</td>
+<td>字符串值是否包含有效的十六进制颜色</td>
+<td>Field validate:”hexcolor”</td>
+</tr>
+<tr>
+<td>lowercase</td>
+<td>符串值是否只包含小写字符</td>
+<td>Field validate:”lowercase”</td>
+</tr>
+<tr>
+<td>uppercase</td>
+<td>符串值是否只包含大写字符</td>
+<td>Field validate:”uppercase”</td>
+</tr>
+<tr>
+<td>email</td>
+<td>字符串值包含一个有效的电子邮件</td>
+<td>Field validate:”email”</td>
+</tr>
+<tr>
+<td>json</td>
+<td>字符串值是否为有效的</td>
+<td>JSON    Field validate:”json”</td>
+</tr>
+<tr>
+<td>file</td>
+<td>符串值是否包含有效的文件路径，以及该文件是否存在于计算机上</td>
+<td>Field validate:”file”</td>
+</tr>
+<tr>
+<td>url</td>
+<td>符串值是否包含有效的</td>
+<td>url    Field validate:”url”</td>
+</tr>
+<tr>
+<td>uri</td>
+<td>符串值是否包含有效的</td>
+<td>uri    Field validate:”uri”</td>
+</tr>
+<tr>
+<td>base64</td>
+<td>字符串值是否包含有效的</td>
+<td>base64值    Field validate:”base64”</td>
+</tr>
+<tr>
+<td>contains</td>
+<td>字符串值包含子字符串值</td>
+<td>Field validate:”contains=@”</td>
+</tr>
+<tr>
+<td>containsany</td>
+<td>字符串值包含子字符串值中的任何字符</td>
+<td>Field validate:”containsany=abc”</td>
+</tr>
+<tr>
+<td>containsrune</td>
+<td>字符串值包含提供的特殊符号值</td>
+<td>Field validate:”containsrune=☢”</td>
+</tr>
+<tr>
+<td>excludes</td>
+<td>字符串值不包含子字符串值</td>
+<td>Field validate:”excludes=@”</td>
+</tr>
+<tr>
+<td>excludesall</td>
+<td>字符串值不包含任何子字符串值</td>
+<td>Field validate:”excludesall=abc”</td>
+</tr>
+<tr>
+<td>excludesrune</td>
+<td>字符串值不包含提供的特殊符号值</td>
+<td>Field validate:”containsrune=☢”</td>
+</tr>
+<tr>
+<td>startswith</td>
+<td>字符串以提供的字符串值开始</td>
+<td>Field validate:”startswith=abc”</td>
+</tr>
+<tr>
+<td>endswith</td>
+<td>字符串以提供的字符串值结束</td>
+<td>Field validate:”endswith=abc”</td>
+</tr>
+<tr>
+<td>ip</td>
+<td>字符串值是否包含有效的</td>
+<td>IP 地址    Field validate:”ip”</td>
+</tr>
+<tr>
+<td>ipv4</td>
+<td>字符串值是否包含有效的</td>
+<td>ipv4地址    Field validate:”ipv4”</td>
+</tr>
+<tr>
+<td>datetime</td>
+<td>字符串值是否包含有效的</td>
+<td>日期    Field validate:”datetime”</td>
+</tr>
+</tbody></table>
+<h3 id="常用验证Tag"><a href="#常用验证Tag" class="headerlink" title="常用验证Tag"></a>常用验证Tag</h3><pre><code class="golang">type Test struct &#123;
+    ID          int    `binding:&quot;required&quot;`             //数字确保不为0
+    Name        string `binding:&quot;required,min=1,max=8&quot;` //字符串确保不为&quot;&quot;，且长度 &gt;=1 &amp;&amp; &lt;=8 （min=1,max=8等于gt=0,lt=9）
+    Value       string `binding:&quot;required,gte=1,lte=8&quot;` //字符串确保不为&quot;&quot;，且长度 &gt;=1 &amp;&amp; &lt;=8
+    Status      int    `binding:&quot;min=1,max=10&quot;`         //最小为0，最大为10（min=0,max=10等于gt=0,lt=11）
+    PhoneNumber string `binding:&quot;required,len=11&quot;`      //不为&quot;&quot;且长度为11
+    Time        string `binding:&quot;datetime=2006-01-02&quot;`  //必须如2006-01-02的datetime格式
+    Color       string `binding:&quot;oneof=red green&quot;`      //是能是red或者green
+    Size        int    `binding:&quot;oneof=37 39 41&quot;`       //是能是37或者39或者41
+    Email       string `binding:&quot;email&quot;`                //必须邮件格式
+    JSON        string `binding:&quot;json&quot;`                 //必须json格式
+    URL         string `binding:&quot;url&quot;`                  //必须url格式
+    UUID        string `binding:&quot;uuid&quot;`                 //必须uuid格式
+&#125;
+</code></pre>
+<h3 id="自定义验证器1"><a href="#自定义验证器1" class="headerlink" title="自定义验证器1"></a>自定义验证器1</h3><pre><code class="golang">package main
+
+import (
+    &quot;fmt&quot;
+    &quot;net/http&quot;
+    &quot;time&quot;
+
+    &quot;github.com/go-playground/validator/v10&quot;
+
+    &quot;github.com/gin-gonic/gin&quot;
+    &quot;github.com/gin-gonic/gin/binding&quot;
+)
+
+// Booking contains binded and validated data.
+type Booking struct &#123;
+    CheckIn  time.Time `form:&quot;check_in&quot; binding:&quot;required,bookabledate&quot; time_format:&quot;2006-01-02&quot;`
+    CheckOut time.Time `form:&quot;check_out&quot; binding:&quot;required,gtfield=CheckIn&quot; time_format:&quot;2006-01-02&quot;`
+&#125;
+
+//validator v9以上写法
+func bookableDate(fl validator.FieldLevel) bool &#123;
+    if date, ok := fl.Field().Interface().(time.Time); ok &#123;
+        today := time.Now()
+        fmt.Println(&quot;date:&quot;, date)
+        if date.Unix() &gt; today.Unix() &#123;
+            fmt.Println(&quot;date unix ：&quot;, date.Unix())
+            return true
+        &#125;
+    &#125;
+    return false
+&#125;
+
+//validator v8写法
+//func bookableDate(
+//  v *validator.Validate, topStruct reflect.Value, currentStructOrField reflect.Value,
+//  field reflect.Value, fieldType reflect.Type, fieldKind reflect.Kind, param string,
+//) bool &#123;
+//  if date, ok := field.Interface().(time.Time); ok &#123;
+//      today := time.Now()
+//      if date.Unix()&gt;today.Unix()&#123;
+//          return true
+//      &#125;
+//  &#125;
+//  return false
+//&#125;
+
+func main() &#123;
+    route := gin.Default()
+    if v, ok := binding.Validator.Engine().(*validator.Validate); ok &#123;
+        _ = v.RegisterValidation(&quot;bookabledate&quot;, bookableDate)
+    &#125;
+    route.GET(&quot;/bookable&quot;, getBookable)
+    route.Run()
+&#125;
+
+func getBookable(c *gin.Context) &#123;
+    var b Booking
+    if err := c.ShouldBindWith(&amp;b, binding.Query); err != nil &#123;
+        c.JSON(http.StatusBadRequest, gin.H&#123;&quot;error&quot;: err.Error()&#125;)
+    &#125; else &#123;
+        c.JSON(http.StatusOK, gin.H&#123;&quot;message&quot;: &quot;ok&quot;, &quot;booking&quot;: b&#125;)
+    &#125;
+&#125;
+</code></pre>
+<h3 id="验证器自定义错误信息1"><a href="#验证器自定义错误信息1" class="headerlink" title="验证器自定义错误信息1"></a>验证器自定义错误信息1</h3><p>原有的错误信息如下：</p>
+<pre><code class="json">&#123;
+    &quot;message&quot;: &quot;Key: &#39;LoginRequest.Mobile&#39; Error:Field validation for &#39;Mobile&#39; failed on the &#39;required&#39; tag\nKey: &#39;LoginRequest.Code&#39; Error:Field validation for &#39;Code&#39; failed on the &#39;required&#39; tag&quot;
+&#125;
+</code></pre>
+<p>这样的提示信息不是很友好, 在 validator 文档中也说明了这个信息只是用在开发时进行调试用的. 那么我们怎么返回自定义的验证提示呢. 参考 validator 文档, 我是这样来实现的.</p>
+<pre><code class="golang">import (
+    &quot;gopkg.in/go-playground/validator.v8&quot;
+)
+
+// 绑定模型
+type LoginRequest struct &#123;
+    Mobile string   `form:&quot;mobile&quot; json:&quot;mobile&quot; binding:&quot;required&quot;`
+    Code   string   `form:&quot;code&quot; json:&quot;code&quot; binding:&quot;required&quot;`
+&#125;
+
+// 绑定模型获取验证错误的方法
+func (r *LoginRequest) GetError (err validator.ValidationErrors) string &#123;
+
+    // 这里的 &quot;LoginRequest.Mobile&quot; 索引对应的是模型的名称和字段
+    if val, exist := err[&quot;LoginRequest.Mobile&quot;]; exist &#123;
+        if val.Field == &quot;Mobile&quot; &#123;
+            switch val.Tag&#123;
+                case &quot;required&quot;:
+                    return &quot;请输入手机号码&quot;
+            &#125;
+        &#125;
+    &#125;
+    if val, exist := err[&quot;LoginRequest.Code&quot;]; exist &#123;
+        if val.Field == &quot;Code&quot; &#123;
+            switch val.Tag&#123;
+                case &quot;required&quot;:
+                    return &quot;请输入验证码&quot;
+            &#125;
+        &#125;
+    &#125;
+    return &quot;参数错误&quot;
+&#125;
+</code></pre>
+<p>如何使用模型, 以登录方法为例</p>
+<pre><code class="golang">import (
+    &quot;github.com/gin-gonic/gin&quot;
+    &quot;net/http&quot;
+    &quot;gopkg.in/go-playground/validator.v8&quot;
+)
+
+
+func Login(c *gin.Context) &#123;
+    var loginRequest LoginRequest
+
+    if err := c.ShouldBind(&amp;loginRequest); err == nil &#123; 
+        // 参数接收正确, 进行登录操作
+
+        c.JSON(http.StatusOK, loginRequest)
+    &#125;else&#123;
+        // 验证错误
+        c.JSON(http.StatusUnprocessableEntity, gin.H&#123;
+            &quot;message&quot;: loginRequest.GetError(err.(validator.ValidationErrors)), // 注意这里要将 err 进行转换
+        &#125;)
+    &#125;
+&#125;
+</code></pre>
+<h3 id="验证器自定义错误信息2"><a href="#验证器自定义错误信息2" class="headerlink" title="验证器自定义错误信息2"></a>验证器自定义错误信息2</h3><p>目录结构</p>
+<pre><code>.
+├── main.go
+└── valid
+    └── valid.go
+</code></pre>
+<p>valid.valid.go</p>
+<pre><code class="golang">package valid
+
+import (
+    &quot;fmt&quot;
+    &quot;regexp&quot;
+    &quot;strings&quot;
+
+    &quot;github.com/gin-gonic/gin/binding&quot;
+    &quot;github.com/go-playground/locales/zh&quot;
+    ut &quot;github.com/go-playground/universal-translator&quot;
+    &quot;github.com/go-playground/validator/v10&quot;
+    zh_translations &quot;github.com/go-playground/validator/v10/translations/zh&quot;
+)
+
+var v *validator.Validate
+var Trans ut.Translator
+
+// 初始化翻译器
+func InitTrans() (err error) &#123;
+    //修改gin框架中的Validator属性，实现自定制
+    if v, ok := binding.Validator.Engine().(*validator.Validate); ok &#123;
+
+        //v.RegisterTagNameFunc(func(fld reflect.StructField) string &#123;
+        //    return fld.Tag.Get(&quot;comment&quot;) //field.Tag.Get(&quot;json&quot;)
+        //&#125;)
+
+        v.RegisterValidation(&quot;checkMobile&quot;, checkMobile)
+
+        zhT := zh.New() //中文翻译器
+
+        // 第一个参数是备用（fallback）的语言环境
+        // 后面的参数是应该支持的语言环境（支持多个）
+        // uni := ut.New(zhT, zhT) 也是可以的
+        uni := ut.New(zhT, zhT)
+
+        var ok bool
+        // 也可以使用 uni.FindTranslator(...) 传入多个locale进行查找
+        Trans, ok = uni.GetTranslator(&quot;zh&quot;)
+        if !ok &#123;
+            return fmt.Errorf(&quot;uni.GetTranslator(%s) failed&quot;, &quot;zh&quot;)
+        &#125;
+        zh_translations.RegisterDefaultTranslations(v, Trans)
+
+        // 添加额外翻译
+        _ = v.RegisterTranslation(&quot;checkMobile&quot;, Trans, func(ut ut.Translator) error &#123;
+            return ut.Add(&quot;checkMobile&quot;, &quot;&#123;0&#125; 电话错误!&quot;, true)
+        &#125;, func(ut ut.Translator, fe validator.FieldError) string &#123;
+            t, _ := ut.T(&quot;checkMobile&quot;, fe.Field())
+            return t
+        &#125;)
+
+    &#125;
+    return
+&#125;
+func checkMobile(fl validator.FieldLevel) bool &#123;
+    ok, _ := regexp.MatchString(`^1[3-9][0-9]&#123;9&#125;$`, fl.Field().String())
+    return ok
+&#125;
+
+func ParseErr(errs validator.ValidationErrors) string &#123;
+    var errList []string
+    for _, e := range errs &#123;
+        // can translate each error one at a time.
+        errList = append(errList, e.Translate(Trans))
+        //errList = append(errList, e.Field())
+    &#125;
+    return strings.Join(errList, &quot;|&quot;)
+
+&#125;
+</code></pre>
+<p>main.go</p>
+<pre><code class="golang">package main
+
+import (
+    &quot;net/http&quot;
+
+    &quot;github.com/gin-gonic/gin&quot;
+    &quot;github.com/go-playground/validator/v10&quot;
+
+    &quot;my-test/gin-validator/valid&quot;
+)
+
+func main() &#123;
+    route := gin.Default()
+    _ = valid.InitTrans()
+    route.POST(&quot;/valid&quot;, validHandler)
+    route.Run()
+&#125;
+
+type req struct &#123;
+    Name   string `json:&quot;name&quot; binding:&quot;required&quot;`
+    Mobile string `json:&quot;mobile&quot; binding:&quot;checkMobile&quot;`
+    Age    int    `json:&quot;mobile&quot; binding:&quot;gt=12,lt=100&quot; comment:&quot;年龄大于12，小于100&quot;`
+&#125;
+
+func validHandler(c *gin.Context) &#123;
+    req := req&#123;&#125;
+    err := c.ShouldBindJSON(&amp;req)
+    if err != nil &#123;
+        errmsg := err.Error()
+        if e, ok := err.(validator.ValidationErrors); ok &#123;
+            errmsg = valid.ParseErr(e)
+        &#125;
+        c.JSON(http.StatusOK, gin.H&#123;
+            &quot;error&quot;: errmsg,
+        &#125;)
+        return
+    &#125;
+    c.JSON(http.StatusOK, &quot;Success&quot;)
+&#125;
+</code></pre>
+<h3 id="参考文档"><a href="#参考文档" class="headerlink" title="参考文档"></a>参考文档</h3><ul>
+<li><a target="_blank" rel="noopener" href="https://segmentfault.com/a/1190000022527284">gin - validator 参数校验</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.jianshu.com/p/0183d959edf1">gin框架自定义验证错误提示信息</a></li>
+<li><a target="_blank" rel="noopener" href="https://wangyangyangisme.github.io/2020/10/20/golang-Golang%E4%BD%BF%E7%94%A8validator%E8%BF%9B%E8%A1%8C%E6%95%B0%E6%8D%AE%E6%A0%A1%E9%AA%8C%E5%8F%8A%E8%87%AA%E5%AE%9A%E4%B9%89%E7%BF%BB%E8%AF%91%E5%99%A8/#1-%E5%AE%9A%E4%B9%89%E9%94%99%E8%AF%AF%E7%BF%BB%E8%AF%91%E5%99%A8">Golang使用validator进行数据校验及自定义翻译器</a></li>
+<li><a target="_blank" rel="noopener" href="https://godoc.org/gopkg.in/go-playground/validator.v8#hdr-Baked_In_Validators_and_Tags">validator Go doc</a></li>
+</ul>
+
+      
+       <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。也可以邮件至 296245956@qq.com </span>
+    </div>
+</article>
+
+
+
+
+
+
+
+    
+
+
+
+
+    </div>
+    <div class="copyright">
+        <p class="footer-entry">
+    ©2015-2022 huangxingx
+</p>
+<p class="footer-entry">Built with <a href="https://hexo.io/" target="_blank">Hexo</a> and <a href="https://github.com/yelog/hexo-theme-3-hexo" target="_blank">3-hexo</a> theme</p>
+
+    </div>
+    <div class="full-toc">
+        <button class="full" data-title="切换全屏 快捷键 s"><span class="min "></span></button>
+<a class="" id="rocket" ></a>
+
+    </div>
+</div>
+
+</body>
+<script src="/js/jquery.pjax.js?v=1.1.0" ></script>
+
+<script src="/js/script.js?v=1.1.0" ></script>
+<script>
+    var img_resize = 'default';
+    function initArticle() {
+        /*渲染对应的表格样式*/
+        
+            $("#post .pjax table").addClass("green_title");
+        
+
+        /*渲染打赏样式*/
+        
+
+        /*高亮代码块行号*/
+        
+
+        /*访问数量*/
+        
+
+        /*代码高亮，行号对齐*/
+        $('.pre-numbering').css('line-height',$('.has-numbering').css('line-height'));
+
+        
+        
+        /* 渲染*/
+        function HTMLDecode(text) {
+            var temp = document.createElement("div");
+            temp.innerHTML = text;
+            var output = temp.innerText || temp.textContent;
+            temp = null;
+            return output;
+        }
+        if (window.mermaid){
+            window.mermaid = null
+        }
+        $.getScript("//cdn.jsdelivr.net/npm/mermaid@8.4.2/dist/mermaid.min.js", function () {
+            var mermaidOptions = JSON.parse(HTMLDecode("{&#34;theme&#34;:&#34;default&#34;,&#34;startOnLoad&#34;:true,&#34;flowchart&#34;:{&#34;useMaxWidth&#34;:false,&#34;htmlLabels&#34;:true}}"))
+            if (window.mermaid) {
+                mermaid.initialize(mermaidOptions)
+                mermaid.contentLoaded()
+            }
+        })
+        
+    }
+
+    /*打赏页面隐藏与展示*/
+    
+
+</script>
+
+<!--加入行号的高亮代码块样式-->
+
+<!--自定义样式设置-->
+<style>
+    
+    
+    .nav {
+        width: 542px;
+    }
+    .nav.fullscreen {
+        margin-left: -542px;
+    }
+    .nav-left {
+        width: 120px;
+    }
+    
+    
+    @media screen and (max-width: 1468px) {
+        .nav {
+            width: 492px;
+        }
+        .nav.fullscreen {
+            margin-left: -492px;
+        }
+        .nav-left {
+            width: 100px;
+        }
+    }
+    
+    
+    @media screen and (max-width: 1024px) {
+        .nav {
+            width: 492px;
+            margin-left: -492px
+        }
+        .nav.fullscreen {
+            margin-left: 0;
+        }
+    }
+    
+    @media screen and (max-width: 426px) {
+        .nav {
+            width: 100%;
+        }
+        .nav-left {
+            width: 100%;
+        }
+    }
+    
+    
+    .nav-right .title-list nav a .post-title, .nav-right .title-list #local-search-result a .post-title {
+        color: #383636;
+    }
+    
+    
+    .nav-right .title-list nav a .post-date, .nav-right .title-list #local-search-result a .post-date {
+        color: #5e5e5f;
+    }
+    
+    
+    .nav-right nav a.hover, #local-search-result a.hover{
+        background-color: #e2e0e0;
+    }
+    
+    
+
+    /*列表样式*/
+    
+
+    /* 背景图样式 */
+    
+    
+
+
+    /*引用块样式*/
+    
+
+    /*文章列表背景图*/
+    
+
+    
+</style>
+
+
+
+
+
+
+<div class="mobile-menus-out" >
+
+</div>
+<div class="mobile-menus">
+    
+    
+    
+    
+    <a class="dynamic-menu " target="_blank"  href="https://github.com/huangxingx">github</a>
+    
+</div>
+
+
+</html>
