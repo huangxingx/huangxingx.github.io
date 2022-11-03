@@ -2,9 +2,9 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>golang ants 协程池 | huangxingx</title>
-  <meta name="keywords" content=" golang , ants , goroutine ">
-  <meta name="description" content="golang ants 协程池 | huangxingx">
+  <title>Java双亲委派机制及用法 | huangxingx</title>
+  <meta name="keywords" content=" java ">
+  <meta name="description" content="Java双亲委派机制及用法 | huangxingx">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="description" content="Java双亲委派机制及用法一、JVM类加载过程整个生命周期包括如下7个阶段  加载(loading)也称为装载 验证、准备、解析3个部分统称为链接(Linking) 初始化 使用 销毁   二、类加载器介绍JVM中有内置了三个初始的类加载器。  **BootstrapClassLoader(引导类、启动类加载器)**，顶层类加载器，C++实现。加载%JAVA_HOME%lib目录下jar包和类或者">
 <meta property="og:type" content="article">
@@ -773,9 +773,9 @@
 </aside>
 <div id="post">
     <div class="pjax">
-        <article id="post-golang/golang-ants-协程池" class="article article-type-post" itemscope itemprop="blogPost">
+        <article id="post-java/java双亲委派机制及用法" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <h1 class="article-title">golang ants 协程池</h1>
+        <h1 class="article-title">Java双亲委派机制及用法</h1>
     
     <div class="article-meta">
         
@@ -785,7 +785,7 @@
             <i class="iconfont icon-category"></i>
             
             
-            <a  data-rel="golang">golang</a>
+            <a  data-rel="java">java</a>
             
         </span>
         
@@ -793,18 +793,14 @@
         <span class="tag">
             <i class="iconfont icon-tag"></i>
             
-            <a class="color2">golang</a>
-            
-            <a class="color5">ants</a>
-            
-            <a class="color5">goroutine</a>
+            <a class="color5">java</a>
             
         </span>
         
     </div>
     <div class="article-meta">
         
-            Created At : <time class="date" title='Updated At: 2022-10-31 17:40:57'>2021-09-18 16:07</time>
+            Created At : <time class="date" title='Updated At: 2022-11-03 11:24:00'>2022-11-03 00:00</time>
         
     </div>
     <div class="article-meta">
@@ -815,7 +811,7 @@
     
     <div class="toc-ref">
     
-        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#ants-%E7%B1%BB%E5%9B%BE"><span class="toc-text">ants 类图</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Java%E5%8F%8C%E4%BA%B2%E5%A7%94%E6%B4%BE%E6%9C%BA%E5%88%B6%E5%8F%8A%E7%94%A8%E6%B3%95"><span class="toc-text">Java双亲委派机制及用法</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%80%E3%80%81JVM%E7%B1%BB%E5%8A%A0%E8%BD%BD%E8%BF%87%E7%A8%8B"><span class="toc-text">一、JVM类加载过程</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BA%8C%E3%80%81%E7%B1%BB%E5%8A%A0%E8%BD%BD%E5%99%A8%E4%BB%8B%E7%BB%8D"><span class="toc-text">二、类加载器介绍</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%89%E3%80%81%E5%8F%8C%E4%BA%B2%E5%A7%94%E6%B4%BE%E6%A8%A1%E5%9E%8B"><span class="toc-text">三、双亲委派模型</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9B%9B%E3%80%81%E5%8F%8C%E4%BA%B2%E5%A7%94%E6%B4%BE%E6%A8%A1%E5%BC%8F%E7%9A%84%E7%89%B9%E7%82%B9"><span class="toc-text">四、双亲委派模式的特点</span></a></li></ol></li></ol></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -831,7 +827,31 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="ants-类图"><a href="#ants-类图" class="headerlink" title="ants 类图"></a>ants 类图</h3><p><img src="/img/puml/ants/ants.svg" alt="direct"></p>
+        <h1 id="Java双亲委派机制及用法"><a href="#Java双亲委派机制及用法" class="headerlink" title="Java双亲委派机制及用法"></a>Java双亲委派机制及用法</h1><h2 id="一、JVM类加载过程"><a href="#一、JVM类加载过程" class="headerlink" title="一、JVM类加载过程"></a>一、JVM类加载过程</h2><p>整个生命周期包括如下7个阶段</p>
+<ol>
+<li>加载(loading)也称为装载</li>
+<li>验证、准备、解析3个部分统称为链接(Linking)</li>
+<li>初始化</li>
+<li>使用</li>
+<li>销毁</li>
+</ol>
+<p><img src="/img/java%E7%B1%BB%E5%8A%A0%E8%BD%BD%E8%BF%87%E7%A8%8B.png" alt="java类加载过程"></p>
+<h3 id="二、类加载器介绍"><a href="#二、类加载器介绍" class="headerlink" title="二、类加载器介绍"></a>二、类加载器介绍</h3><p>JVM中有内置了三个初始的类加载器。</p>
+<ol>
+<li>**BootstrapClassLoader(引导类、启动类加载器)**，顶层类加载器，C++实现。加载%JAVA_HOME%lib目录下jar包和类或者或被 <code>-Xbootclasspath</code>参数指定的路径中的所有类，加载java.*。</li>
+<li><strong>ExtensionClassLoader(扩展类加载器)</strong> ：负责加载目录 <code>%JRE_HOME%/lib/ext</code> 目录下的jar包和类，或被 <code>java.ext.dirs</code> 系统变量所指定的路径下的jar包。</li>
+<li><strong>AppClassLoader(应用程序类加载器)</strong> :加载当前应用classpath下的所有jar包和类（在spring加载中起到了重要作用）。</li>
+</ol>
+<h3 id="三、双亲委派模型"><a href="#三、双亲委派模型" class="headerlink" title="三、双亲委派模型"></a>三、双亲委派模型</h3><p>一个类加载的时候先交由父类加载器去加载，如果父类加载器也存在父类加载器，继续交由父类加载，以此递归，如果父类加载无法加载再由自己去加载。</p>
+<p><img src="/img/java%E5%8F%8C%E4%BA%B2%E5%A7%94%E6%B4%BE%E6%A8%A1%E5%9E%8B.png" alt="双亲委派模型"></p>
+<p><strong>如果想打破双亲委派机制可以自定义一个类加载器继承java.lang.ClassLoader，重写loadClass方法，不交由父类去加载。</strong></p>
+<p><strong>如果只是想自定义加载class的方法，比如读取二进制流后进行解密等。只需要重写findClass就行了。</strong></p>
+<p><strong>loadClass方法负责加载流程，findClass方法负责具体加载细节。</strong></p>
+<h3 id="四、双亲委派模式的特点"><a href="#四、双亲委派模式的特点" class="headerlink" title="四、双亲委派模式的特点"></a>四、双亲委派模式的特点</h3><ul>
+<li>避免重复加载<code>class</code>，保证数据安全。</li>
+<li>保护核心class无法修改。</li>
+<li>不同加载器加载同一个class不是同一个class对象，保证class执行安全。</li>
+</ul>
 
       
        <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。也可以邮件至 296245956@qq.com </span>

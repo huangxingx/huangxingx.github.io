@@ -2,9 +2,9 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>golang ants 协程池 | huangxingx</title>
-  <meta name="keywords" content=" golang , ants , goroutine ">
-  <meta name="description" content="golang ants 协程池 | huangxingx">
+  <title>Arthas | huangxingx</title>
+  <meta name="keywords" content=" java ">
+  <meta name="description" content="Arthas | huangxingx">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="description" content="Java双亲委派机制及用法一、JVM类加载过程整个生命周期包括如下7个阶段  加载(loading)也称为装载 验证、准备、解析3个部分统称为链接(Linking) 初始化 使用 销毁   二、类加载器介绍JVM中有内置了三个初始的类加载器。  **BootstrapClassLoader(引导类、启动类加载器)**，顶层类加载器，C++实现。加载%JAVA_HOME%lib目录下jar包和类或者">
 <meta property="og:type" content="article">
@@ -773,9 +773,9 @@
 </aside>
 <div id="post">
     <div class="pjax">
-        <article id="post-golang/golang-ants-协程池" class="article article-type-post" itemscope itemprop="blogPost">
+        <article id="post-java/arthas" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <h1 class="article-title">golang ants 协程池</h1>
+        <h1 class="article-title">Arthas</h1>
     
     <div class="article-meta">
         
@@ -785,7 +785,7 @@
             <i class="iconfont icon-category"></i>
             
             
-            <a  data-rel="golang">golang</a>
+            <a  data-rel="java">java</a>
             
         </span>
         
@@ -793,18 +793,14 @@
         <span class="tag">
             <i class="iconfont icon-tag"></i>
             
-            <a class="color2">golang</a>
-            
-            <a class="color5">ants</a>
-            
-            <a class="color5">goroutine</a>
+            <a class="color5">java</a>
             
         </span>
         
     </div>
     <div class="article-meta">
         
-            Created At : <time class="date" title='Updated At: 2022-10-31 17:40:57'>2021-09-18 16:07</time>
+            Created At : <time class="date" title='Updated At: 2022-11-03 19:58:30'>2022-11-03 00:00</time>
         
     </div>
     <div class="article-meta">
@@ -815,7 +811,7 @@
     
     <div class="toc-ref">
     
-        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#ants-%E7%B1%BB%E5%9B%BE"><span class="toc-text">ants 类图</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Arthas"><span class="toc-text">Arthas</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%BF%AB%E9%80%9F%E5%85%A5%E9%97%A8"><span class="toc-text">快速入门</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4"><span class="toc-text">常用命令</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#logger"><span class="toc-text">logger</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#jad"><span class="toc-text">jad</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#tt"><span class="toc-text">tt</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#trace"><span class="toc-text">trace</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#watch"><span class="toc-text">watch</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#dashboard"><span class="toc-text">dashboard</span></a></li></ol></li></ol></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -831,7 +827,195 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="ants-类图"><a href="#ants-类图" class="headerlink" title="ants 类图"></a>ants 类图</h3><p><img src="/img/puml/ants/ants.svg" alt="direct"></p>
+        <h1 id="Arthas"><a href="#Arthas" class="headerlink" title="Arthas"></a>Arthas</h1><h2 id="快速入门"><a href="#快速入门" class="headerlink" title="快速入门"></a>快速入门</h2><p>文档地址：<a target="_blank" rel="noopener" href="https://arthas.aliyun.com/">https://arthas.aliyun.com/</a></p>
+<p>下载并启动arthas</p>
+<pre><code class="shell">curl -O https://arthas.aliyun.com/arthas-boot.jar
+java -jar arthas-boot.jar
+</code></pre>
+<p><strong>使用<code>as.sh</code></strong></p>
+<p>Arthas 支持在 Linux/Unix/Mac 等平台上一键安装，请复制以下内容，并粘贴到命令行中，敲 <code>回车</code> 执行即可：</p>
+<pre><code class="shell">curl -L https://arthas.aliyun.com/install.sh | sh        
+</code></pre>
+<h2 id="常用命令"><a href="#常用命令" class="headerlink" title="常用命令"></a>常用命令</h2><h3 id="logger"><a href="#logger" class="headerlink" title="logger"></a>logger</h3><p>更新 logger lever</p>
+<pre><code class="shell">logger --name ROOT --level debug
+</code></pre>
+<h3 id="jad"><a href="#jad" class="headerlink" title="jad"></a>jad</h3><p>反编译指定已加载类的源码</p>
+<p>使用参考 <a target="_blank" rel="noopener" href="https://arthas.aliyun.com/doc/jad.html">https://arthas.aliyun.com/doc/jad.html</a></p>
+<p><strong>参数说明</strong></p>
+<table>
+<thead>
+<tr>
+<th align="right">参数名称</th>
+<th align="left">参数说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="right"><em>class-pattern</em></td>
+<td align="left">类名表达式匹配</td>
+</tr>
+<tr>
+<td align="right"><code>[c:]</code></td>
+<td align="left">类所属 ClassLoader 的 hashcode</td>
+</tr>
+<tr>
+<td align="right"><code>[classLoaderClass:]</code></td>
+<td align="left">指定执行表达式的 ClassLoader 的 class name</td>
+</tr>
+<tr>
+<td align="right">[E]</td>
+<td align="left">开启正则表达式匹配，默认为通配符匹配</td>
+</tr>
+</tbody></table>
+<h3 id="tt"><a href="#tt" class="headerlink" title="tt"></a>tt</h3><p>方法执行数据的时空隧道，记录下指定方法每次调用的入参和返回信息，并能对这些不同的时间下调用进行观测</p>
+<pre><code class="shell">tt -t demo.MathGame primeFactors
+</code></pre>
+<p><strong>表格字段说明</strong></p>
+<table>
+<thead>
+<tr>
+<th>表格字段</th>
+<th>字段解释</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>INDEX</td>
+<td>时间片段记录编号，每一个编号代表着一次调用，后续 tt 还有很多命令都是基于此编号指定记录操作，非常重要。</td>
+</tr>
+<tr>
+<td>TIMESTAMP</td>
+<td>方法执行的本机时间，记录了这个时间片段所发生的本机时间</td>
+</tr>
+<tr>
+<td>COST(ms)</td>
+<td>方法执行的耗时</td>
+</tr>
+<tr>
+<td>IS-RET</td>
+<td>方法是否以正常返回的形式结束</td>
+</tr>
+<tr>
+<td>IS-EXP</td>
+<td>方法是否以抛异常的形式结束</td>
+</tr>
+<tr>
+<td>OBJECT</td>
+<td>执行对象的<code>hashCode()</code>，注意，曾经有人误认为是对象在 JVM 中的内存地址，但很遗憾他不是。但他能帮助你简单的标记当前执行方法的类实体</td>
+</tr>
+<tr>
+<td>CLASS</td>
+<td>执行的类名</td>
+</tr>
+<tr>
+<td>METHOD</td>
+<td>执行的方法名</td>
+</tr>
+</tbody></table>
+<h3 id="trace"><a href="#trace" class="headerlink" title="trace"></a>trace</h3><p><code>trace</code> 命令能主动搜索 <code>class-pattern</code>／<code>method-pattern</code> 对应的方法调用路径，渲染和统计整个调用链路上的所有性能开销和追踪调用链路。</p>
+<p><strong>参数说明</strong></p>
+<table>
+<thead>
+<tr>
+<th align="right">参数名称</th>
+<th align="left">参数说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="right"><em>class-pattern</em></td>
+<td align="left">类名表达式匹配</td>
+</tr>
+<tr>
+<td align="right"><em>method-pattern</em></td>
+<td align="left">方法名表达式匹配</td>
+</tr>
+<tr>
+<td align="right"><em>condition-express</em></td>
+<td align="left">条件表达式</td>
+</tr>
+<tr>
+<td align="right">[E]</td>
+<td align="left">开启正则表达式匹配，默认为通配符匹配</td>
+</tr>
+<tr>
+<td align="right"><code>[n:]</code></td>
+<td align="left">命令执行次数</td>
+</tr>
+<tr>
+<td align="right"><code>#cost</code></td>
+<td align="left">方法执行耗时</td>
+</tr>
+</tbody></table>
+<pre><code class="shell">trace demo.MathGame run -n 10 &#39;#cost &gt; 10&#39;
+</code></pre>
+<h3 id="watch"><a href="#watch" class="headerlink" title="watch"></a>watch</h3><p>让你能方便的观察到指定函数的调用情况。能观察到的范围为：<code>返回值</code>、<code>抛出异常</code>、<code>入参</code>，通过编写 OGNL 表达式进行对应变量的查看。</p>
+<p><strong>参数说明</strong></p>
+<table>
+<thead>
+<tr>
+<th align="right">参数名称</th>
+<th align="left">参数说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="right"><em>class-pattern</em></td>
+<td align="left">类名表达式匹配</td>
+</tr>
+<tr>
+<td align="right"><em>method-pattern</em></td>
+<td align="left">函数名表达式匹配</td>
+</tr>
+<tr>
+<td align="right"><em>express</em></td>
+<td align="left">观察表达式，默认值：<code>&#123;params, target, returnObj&#125;</code></td>
+</tr>
+<tr>
+<td align="right"><em>condition-express</em></td>
+<td align="left">条件表达式</td>
+</tr>
+<tr>
+<td align="right">[b]</td>
+<td align="left">在<strong>函数调用之前</strong>观察</td>
+</tr>
+<tr>
+<td align="right">[e]</td>
+<td align="left">在<strong>函数异常之后</strong>观察</td>
+</tr>
+<tr>
+<td align="right">[s]</td>
+<td align="left">在<strong>函数返回之后</strong>观察</td>
+</tr>
+<tr>
+<td align="right">[f]</td>
+<td align="left">在<strong>函数结束之后</strong>(正常返回和异常返回)观察</td>
+</tr>
+<tr>
+<td align="right">[E]</td>
+<td align="left">开启正则表达式匹配，默认为通配符匹配</td>
+</tr>
+<tr>
+<td align="right">[x:]</td>
+<td align="left">指定输出结果的属性遍历深度，默认为 1，最大值是 4</td>
+</tr>
+</tbody></table>
+<pre><code class="shell">watch demo.MathGame primeFactors -x 2
+</code></pre>
+<h3 id="dashboard"><a href="#dashboard" class="headerlink" title="dashboard"></a>dashboard</h3><p>当运行在 Ali-tomcat 时，会显示当前 tomcat 的实时信息，如 HTTP 请求的 qps, rt, 错误数, 线程池信息等等。</p>
+<p><strong>参数说明</strong></p>
+<table>
+<thead>
+<tr>
+<th align="right">参数名称</th>
+<th align="left">参数说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="right">[i:]</td>
+<td align="left">刷新实时数据的时间间隔 (ms)，默认 5000ms</td>
+</tr>
+<tr>
+<td align="right">[n:]</td>
+<td align="left">刷新实时数据的次数</td>
+</tr>
+</tbody></table>
 
       
        <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。也可以邮件至 296245956@qq.com </span>
