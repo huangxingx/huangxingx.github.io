@@ -224,7 +224,7 @@
         
     </div>
 </div>
-<input type="hidden" id="yelog_site_posts_number" value="36">
+<input type="hidden" id="yelog_site_posts_number" value="37">
 
 <div style="display: none">
     <span id="busuanzi_value_site_uv"></span>
@@ -286,6 +286,10 @@
         
             <li class="article-tag-list-item">
                 <i class="iconfont icon-tag"></i><a>性能</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>知识图谱</a>
             </li>
         
             <li class="article-tag-list-item">
@@ -446,6 +450,15 @@
            data-tag="java"
            data-author="" >
             <span class="post-title" title="Arthas">Arthas</span>
+            <span class="post-date" title="2022-11-03 00:00:00">2022/11/03</span>
+        </a>
+        
+        
+        <a  class="All java "
+           href="/2022/11/03/java/Java-%E7%9F%A5%E8%AF%86%E5%9B%BE%E8%B0%B1/"
+           data-tag="java,知识图谱"
+           data-author="" >
+            <span class="post-title" title="Java 知识图谱">Java 知识图谱</span>
             <span class="post-date" title="2022-11-03 00:00:00">2022/11/03</span>
         </a>
         
@@ -800,7 +813,7 @@
     </div>
     <div class="article-meta">
         
-            Created At : <time class="date" title='Updated At: 2022-10-31 17:40:57'>2021-09-08 15:43</time>
+            Created At : <time class="date" title='Updated At: 2022-11-04 11:41:04'>2021-09-08 15:43</time>
         
     </div>
     <div class="article-meta">
@@ -851,6 +864,23 @@ git submodule foreach --recursive git reset --hard
 # 更新子模块
 git submodule  update --init     
 git submodule  update --remote
+</code></pre>
+<p><strong>git filter-branch 批量修改提交人</strong></p>
+<pre><code class="shell">git filter-branch -f --env-filter &#39;
+if [ &quot;$GIT_AUTHOR_NAME&quot; = &quot;oldName&quot; ]
+then
+export GIT_AUTHOR_NAME=&quot;newName&quot;
+export GIT_AUTHOR_EMAIL=&quot;newEmail&quot;
+fi
+&#39; HEAD
+
+git filter-branch -f --env-filter &#39;
+if [ &quot;$GIT_COMMITTER_NAME&quot; = &quot;oldName&quot; ]
+then
+export GIT_COMMITTER_NAME=&quot;newName&quot;
+export GIT_COMMITTER_EMAIL=&quot;newEmail&quot;
+fi
+&#39; HEAD
 </code></pre>
 
       

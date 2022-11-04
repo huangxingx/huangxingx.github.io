@@ -1,6 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://huangxingx.github.io/2021/09/08/git/git-%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/</loc>
+    <lastmod>2022-11-04</lastmod>
+  </url>
+  <url>
+    <loc>https://huangxingx.github.io/2022/11/03/java/Java-%E7%9F%A5%E8%AF%86%E5%9B%BE%E8%B0%B1/</loc>
+    <lastmod>2022-11-03</lastmod>
+  </url>
+  <url>
     <loc>https://huangxingx.github.io/2022/11/03/java/arthas/</loc>
     <lastmod>2022-11-03</lastmod>
   </url>
@@ -130,10 +138,6 @@
   </url>
   <url>
     <loc>https://huangxingx.github.io/2020/05/08/golang/golang%20%E5%90%AF%E5%8A%A8%E4%B8%80%E4%B8%AA%E7%AE%80%E5%8D%95%20http%20%E4%BB%A3%E7%90%86/</loc>
-    <lastmod>2022-10-31</lastmod>
-  </url>
-  <url>
-    <loc>https://huangxingx.github.io/2021/09/08/git/git-%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/</loc>
     <lastmod>2022-10-31</lastmod>
   </url>
   <url>

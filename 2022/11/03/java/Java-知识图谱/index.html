@@ -2,9 +2,9 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>git 统计命令 | huangxingx</title>
-  <meta name="keywords" content=" git ">
-  <meta name="description" content="git 统计命令 | huangxingx">
+  <title>Java 知识图谱 | huangxingx</title>
+  <meta name="keywords" content=" java , 知识图谱 ">
+  <meta name="description" content="Java 知识图谱 | huangxingx">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="description" content="Java双亲委派机制及用法一、JVM类加载过程整个生命周期包括如下7个阶段  加载(loading)也称为装载 验证、准备、解析3个部分统称为链接(Linking) 初始化 使用 销毁   二、类加载器介绍JVM中有内置了三个初始的类加载器。  **BootstrapClassLoader(引导类、启动类加载器)**，顶层类加载器，C++实现。加载%JAVA_HOME%lib目录下jar包和类或者">
 <meta property="og:type" content="article">
@@ -786,9 +786,9 @@
 </aside>
 <div id="post">
     <div class="pjax">
-        <article id="post-git/git-统计命令" class="article article-type-post" itemscope itemprop="blogPost">
+        <article id="post-java/Java-知识图谱" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <h1 class="article-title">git 统计命令</h1>
+        <h1 class="article-title">Java 知识图谱</h1>
     
     <div class="article-meta">
         
@@ -798,7 +798,7 @@
             <i class="iconfont icon-category"></i>
             
             
-            <a  data-rel="git">git</a>
+            <a  data-rel="java">java</a>
             
         </span>
         
@@ -806,14 +806,16 @@
         <span class="tag">
             <i class="iconfont icon-tag"></i>
             
-            <a class="color4">git</a>
+            <a class="color5">java</a>
+            
+            <a class="color5">知识图谱</a>
             
         </span>
         
     </div>
     <div class="article-meta">
         
-            Created At : <time class="date" title='Updated At: 2022-11-01 10:55:47'>2022-11-01 15:43</time>
+            Created At : <time class="date" title='Updated At: 2022-11-03 20:10:46'>2022-11-03 00:00</time>
         
     </div>
     <div class="article-meta">
@@ -824,7 +826,7 @@
     
     <div class="toc-ref">
     
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Git-%E7%BB%9F%E8%AE%A1%E5%91%BD%E4%BB%A4"><span class="toc-text">Git 统计命令</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%BB%9F%E8%AE%A1%E6%9F%90%E4%BA%BA%E7%9A%84%E4%BB%A3%E7%A0%81%E6%8F%90%E4%BA%A4%E9%87%8F%EF%BC%8C%E5%8C%85%E6%8B%AC%E5%A2%9E%E5%8A%A0%EF%BC%8C%E5%88%A0%E9%99%A4"><span class="toc-text">统计某人的代码提交量，包括增加，删除</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BB%93%E5%BA%93%E6%8F%90%E4%BA%A4%E8%80%85%E6%8E%92%E5%90%8D%E5%89%8D-5%EF%BC%88%E5%A6%82%E6%9E%9C%E7%9C%8B%E5%85%A8%E9%83%A8%EF%BC%8C%E5%8E%BB%E6%8E%89-head-%E7%AE%A1%E9%81%93%E5%8D%B3%E5%8F%AF%EF%BC%89"><span class="toc-text">仓库提交者排名前 5（如果看全部，去掉 head 管道即可）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BB%93%E5%BA%93%E6%8F%90%E4%BA%A4%E8%80%85%EF%BC%88%E9%82%AE%E7%AE%B1%EF%BC%89%E6%8E%92%E5%90%8D%E5%89%8D-5%EF%BC%9A%E8%BF%99%E4%B8%AA%E7%BB%9F%E8%AE%A1%E5%8F%AF%E8%83%BD%E4%B8%8D%E4%BC%9A%E5%A4%AA%E5%87%86%EF%BC%8C%E5%9B%A0%E4%B8%BA%E5%BE%88%E5%A4%9A%E4%BA%BA%E6%9C%89%E4%B8%8D%E5%90%8C%E7%9A%84%E9%82%AE%E7%AE%B1%EF%BC%8C%E4%BD%86%E4%BC%9A%E4%BD%BF%E7%94%A8%E7%9B%B8%E5%90%8C%E7%9A%84%E5%90%8D%E5%AD%97"><span class="toc-text">仓库提交者（邮箱）排名前 5：这个统计可能不会太准，因为很多人有不同的邮箱，但会使用相同的名字</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%B4%A1%E7%8C%AE%E8%80%85%E7%BB%9F%E8%AE%A1%EF%BC%9A"><span class="toc-text">贡献者统计：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%8F%90%E4%BA%A4%E6%95%B0%E7%BB%9F%E8%AE%A1%EF%BC%9A"><span class="toc-text">提交数统计：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%B7%BB%E5%8A%A0%E6%88%96%E4%BF%AE%E6%94%B9%E7%9A%84%E4%BB%A3%E7%A0%81%E8%A1%8C%E6%95%B0%EF%BC%9A"><span class="toc-text">添加或修改的代码行数：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#git-log-%E5%8F%82%E6%95%B0%E8%AF%B4%E6%98%8E%EF%BC%9A"><span class="toc-text">git log 参数说明：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#git-blame"><span class="toc-text">git blame</span></a></li></ol></li></ol></li></ol>
+        
     
 <style>
     .left-col .switch-btn,
@@ -840,68 +842,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="Git-统计命令"><a href="#Git-统计命令" class="headerlink" title="Git 统计命令"></a>Git 统计命令</h2><h4 id="统计某人的代码提交量，包括增加，删除"><a href="#统计某人的代码提交量，包括增加，删除" class="headerlink" title="统计某人的代码提交量，包括增加，删除"></a>统计某人的代码提交量，包括增加，删除</h4><pre><code class="shell">git log --author=&quot;$(git config --get user.name)&quot; --pretty=tformat: --numstat | gawk &#39;&#123; add += $1 ; subs += $2 ; loc += $1 - $2 &#125; END &#123; printf &quot;added lines: %s removed lines : %s total lines: %s\n&quot;,add,subs,loc &#125;&#39;
-</code></pre>
-<h4 id="仓库提交者排名前-5（如果看全部，去掉-head-管道即可）"><a href="#仓库提交者排名前-5（如果看全部，去掉-head-管道即可）" class="headerlink" title="仓库提交者排名前 5（如果看全部，去掉 head 管道即可）"></a>仓库提交者排名前 5（如果看全部，去掉 head 管道即可）</h4><pre><code class="shell">git log --pretty=&#39;%aN&#39; | sort | uniq -c | sort -k1 -n -r | head -n 5
-</code></pre>
-<h4 id="仓库提交者（邮箱）排名前-5：这个统计可能不会太准，因为很多人有不同的邮箱，但会使用相同的名字"><a href="#仓库提交者（邮箱）排名前-5：这个统计可能不会太准，因为很多人有不同的邮箱，但会使用相同的名字" class="headerlink" title="仓库提交者（邮箱）排名前 5：这个统计可能不会太准，因为很多人有不同的邮箱，但会使用相同的名字"></a>仓库提交者（邮箱）排名前 5：这个统计可能不会太准，因为很多人有不同的邮箱，但会使用相同的名字</h4><pre><code class="shell">git log --pretty=format:%ae | gawk -- &#39;&#123; ++c[$0]; &#125; END &#123; for(cc in c) printf &quot;%5d %s\n&quot;,c[cc],cc; &#125;&#39; | sort -u -n -r | head -n 5 
-</code></pre>
-<h4 id="贡献者统计："><a href="#贡献者统计：" class="headerlink" title="贡献者统计："></a>贡献者统计：</h4><pre><code class="shell">git log --pretty=&#39;%aN&#39; | sort -u | wc -l
-</code></pre>
-<h4 id="提交数统计："><a href="#提交数统计：" class="headerlink" title="提交数统计："></a>提交数统计：</h4><pre><code class="shell">git log --oneline | wc -l 
-</code></pre>
-<h4 id="添加或修改的代码行数："><a href="#添加或修改的代码行数：" class="headerlink" title="添加或修改的代码行数："></a>添加或修改的代码行数：</h4><pre><code class="shell">git log --stat|perl -ne &#39;END &#123; print $c &#125; $c += $1 if /(\d+) insertions/&#39;
-</code></pre>
-<h4 id="git-log-参数说明："><a href="#git-log-参数说明：" class="headerlink" title="git log 参数说明："></a>git log 参数说明：</h4><pre><code>--author   指定作者
---stat   显示每次更新的文件修改统计信息，会列出具体文件列表
---shortstat    统计每个commit 的文件修改行数，包括增加，删除，但不列出文件列表：  
---numstat   统计每个commit 的文件修改行数，包括增加，删除，并列出文件列表：
- 
-   
--p 选项展开显示每次提交的内容差异，用 -2 则仅显示最近的两次更新
-       例如：git log -p  -2
---name-only 仅在提交信息后显示已修改的文件清单
---name-status 显示新增、修改、删除的文件清单
---abbrev-commit 仅显示 SHA-1 的前几个字符，而非所有的 40 个字符
---relative-date 使用较短的相对时间显示（比如，“2 weeks ago”）
---graph 显示 ASCII 图形表示的分支合并历史
---pretty 使用其他格式显示历史提交信息。可用的选项包括 oneline，short，full，fuller 和 format（后跟指定格式）
-       例如： git log --pretty=oneline ; git log --pretty=short ; git log --pretty=full ; git log --pretty=fuller
---pretty=tformat:   可以定制要显示的记录格式，这样的输出便于后期编程提取分析
-       例如：git log --pretty=format:&quot;&quot;%h - %an, %ar : %s&quot;&quot;
-       下面列出了常用的格式占位符写法及其代表的意义。                   
-       选项       说明                  
-       %H      提交对象（commit）的完整哈希字串               
-       %h      提交对象的简短哈希字串               
-       %T      树对象（tree）的完整哈希字串                   
-       %t      树对象的简短哈希字串                    
-       %P      父对象（parent）的完整哈希字串               
-       %p      父对象的简短哈希字串                   
-       %an     作者（author）的名字              
-       %ae     作者的电子邮件地址                
-       %ad     作者修订日期（可以用 -date= 选项定制格式）                   
-       %ar     作者修订日期，按多久以前的方式显示                    
-       %cn     提交者(committer)的名字                
-       %ce     提交者的电子邮件地址                    
-       %cd     提交日期                
-       %cr     提交日期，按多久以前的方式显示              
-       %s      提交说明  
---since  限制显示输出的范围，
-       例如： git log --since=2.weeks    显示最近两周的提交
-       选项 说明                
-       -(n)    仅显示最近的 n 条提交                    
-       --since, --after 仅显示指定时间之后的提交。                    
-       --until, --before 仅显示指定时间之前的提交。                  
-       --author 仅显示指定作者相关的提交。                
-       --committer 仅显示指定提交者相关的提交。
- 
-    一些例子： git log --until=1.minute.ago // 一分钟之前的所有 log git log --since=1.day.ago //一天之内的log git log --since=1.hour.ago //一个小时之内的 log git log --since=`.month.ago --until=2.weeks.ago //一个月之前到半个月之前的log git
-log --since ==2013-08.01 --until=2013-09-07 //某个时间段的 log  
-</code></pre>
-<h4 id="git-blame"><a href="#git-blame" class="headerlink" title="git blame"></a>git blame</h4><p>看看某一个文件的相关历史记录<br>例如：</p>
-<pre><code class="shell">git blame index.html --date short
-</code></pre>
-
+        
       
        <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。也可以邮件至 296245956@qq.com </span>
     </div>
