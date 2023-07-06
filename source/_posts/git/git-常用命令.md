@@ -10,11 +10,11 @@ auto_excerpt:
 date: 2021-09-08 15:43:04
 ---
 
-**git pull**
+> git pull
 
-**git push** 
+> git push
 
-**git checkout <branch>**
+> git checkout <branch>
 
 ```shell
 # 切换分支到本地 develop 分支
@@ -24,22 +24,36 @@ git checkout develop
 git checkout -b develop 
 ```
 
-**git status**
+> git status
 
-**git log**
+> git log
 
-**git stash**
+> git stash
 
-**git branch**
+```shell
+# 清除所有
+git stash clear
+```
 
-**git rebase**
+
+
+> git branch
+
+```shell
+# 删除远端分支
+git push origin --delete release/V1.10.1
+# 删除本地分支
+git branch -d fenzhi
+```
+
+> rebase
 
 ```shell
 # 变基到两个提交之前
 git rebase -i HEAD~2
 ```
 
-**git submodule**
+> submodule
 
 ```shell
 # 所有子模块执行 git reset --hard
@@ -49,5 +63,25 @@ git submodule foreach --recursive git reset --hard
 git submodule  update --init 	
 git submodule  update --remote
 
+```
+
+> filter-branch 批量修改提交人
+
+```shell
+git filter-branch -f --env-filter '
+if [ "$GIT_AUTHOR_NAME" = "oldName" ]
+then
+export GIT_AUTHOR_NAME="newName"
+export GIT_AUTHOR_EMAIL="newEmail"
+fi
+' HEAD
+
+git filter-branch -f --env-filter '
+if [ "$GIT_COMMITTER_NAME" = "oldName" ]
+then
+export GIT_COMMITTER_NAME="newName"
+export GIT_COMMITTER_EMAIL="newEmail"
+fi
+' HEAD
 ```
 

@@ -54,3 +54,11 @@ ssh-keygen -t rsa -C "youxiang@tencent.com"
 ```shell
 ssh -T git@github.com
 ```
+
+### Window 换行符配置
+
+```shell
+# window换行符改为 LF
+git config core.autocrlf input
+```
+

@@ -46,5 +46,16 @@ Translation plugin for IntelliJ based IDEs.
   <img src=" https://plugins.jetbrains.com/files/8579/screenshot_18009.png" style="zoom:75%;">
   <img src=" https://plugins.jetbrains.com/files/8579/screenshot_18932.png">
 </div>
+### EasyYapi
 
+导出Api
 
+https://github.com/tangcent/easy-yapi
+
+### Maven Helper
+
+A must have plugin for working with Maven.
+
+### Git Commit Template
+
+https://plugins.jetbrains.com/plugin/9861-git-commit-template

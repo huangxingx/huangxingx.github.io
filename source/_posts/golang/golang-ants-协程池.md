@@ -10,6 +10,7 @@ tags:
 - goroutine
 categories:
 - golang
+typora-root-url: ../../img
 ---
 
 ### ants 类图
